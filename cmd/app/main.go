@@ -5,6 +5,7 @@ import (
 	"simple-payment/config"
 	"simple-payment/pkg/models"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -19,6 +20,10 @@ func main() {
 	models.Migrate(db)
 
 	r := gin.Default()
+
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://localhost:5173"}
+	r.Use(cors.New(config))
 
 	api.PublicRouter(r)
 	api.PrivateRouter(r)
