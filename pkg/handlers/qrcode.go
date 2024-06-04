@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"simple-payment/config"
-	"simple-payment/models"
+	"simple-payment/pkg/models"
 	"strconv"
 
 	"github.com/gin-gonic/gin"

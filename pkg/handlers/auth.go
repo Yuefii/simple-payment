@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 	"simple-payment/config"
-	"simple-payment/models"
+	"simple-payment/pkg/models"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
